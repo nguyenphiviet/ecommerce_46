@@ -16,8 +16,10 @@ en:
   layouts:
     header:
       login: "Login"
+      logout: "Log out"
       register: "Register"
       home: "Home"
+      account: "Account"
       customer_login: "Customer login"
       not_registered_yet?: "Not registered yet?"
       register_now: "Register now"
@@ -42,19 +44,31 @@ en:
   static_pages:
     home:
       home: "home"
+  sessions:
+    new:
+      signin: "Sign in"
+      home: "Home"
+      heading: "Sign in"
+      login: "Login"
+      has_account: "Already our customer?"
+      logged_in: "You're already logged in!"
+      remember_me: "Remember me on this computer"
+    create:
+      activate_message: "Account not activated. Check your email for the activation link."
+      activate_fail: "Invalid email/password combination"
   users:
     new:
       signup: "Sign up"
       home: "Home"
-      heading: "New account / Sign in"
+      heading: "New account"
       new_account: "New account"
-      has_account: "Not our registered customer yet?"
+      not_has_account: "Not our registered customer yet?"
       register: "Register"
-      login: "Login"
-      not_has_account: "Already our customer?"
     create:
       check_mail: "Please check your email to activate your account."
       account_activation: "Account activation"
+    show:
+      must_login: "Please log in"
   account_activations:
     success: "Account activated!"
     invalid: "Invalid activation link"
