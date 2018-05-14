@@ -1,4 +1,18 @@
 en:
+  view_detail: "View detail"
+  add_to_cart: "Add to cart"
+  categories: "Categories"
+  add_to_wishlist: "Add to wishlist"
+  show_friends: "Show it to your friends"
+  same_product: "You may also like these products"
+  detail_product: "Detail product"
+  cant_find_product: "Cannot find product"
+  static_pages:
+    home:
+      sign_up: "Sign up now!"
+      welcome: "Welcome to Our Store"
+      hot_products: "HOT PRODUCTS"
+      lastest_products: "LASTEST PRODUCTS"
   layouts:
     header:
       login: "Login"

@@ -9,6 +9,10 @@ user:
     max_length: 10
   password:
     min_length: 6
+  password:
+    min_length: 6
+  address:
+    max_length: 255
 product:
   name:
     max_length: 255

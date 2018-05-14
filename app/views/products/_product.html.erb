@@ -1,0 +1,31 @@
+<div class="col-md-3">
+  <div class="product-slider">
+    <div class="item">
+      <div class="product">
+        <div class="flip-container">
+          <div class="flipper">
+            <div class="front">
+              <a href="#">
+                <%= show_image product %>
+              </a>
+            </div>
+            <div class="back">
+              <a href="#">
+                <%= show_image product %>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text">
+          <h3><a href="#"><%= product.name %></a></h3>
+          <p class="price"><%= product.price %></p>
+          <p class="description"><%= product.description %></p>
+          <p class="buttons">
+            <%= link_to (t "view_detail" ), product, {:class => "btn btn-default"} %>
+            <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
