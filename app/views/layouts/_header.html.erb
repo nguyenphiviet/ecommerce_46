@@ -1,0 +1,46 @@
+<div id="top">
+  <div class="container">
+    <div class="col-md-6 pull-right" data-animate="fadeInDown">
+      <ul class="menu">
+        <li><a href="#" data-toggle="modal" data-target="#login-modal"><%= t ".login" %></a>
+        </li>
+        <li><a href="#"><%= t ".register" %></a>
+        </li>
+        <li><a href="#"><%= t ".contact" %></a>
+        </li>
+        <li><a href="#"><%= t ".recently_viewed" %></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="Login"><%= t ".customer_login" %></h4>
+        </div>
+        <div class="modal-body">
+          <form action="customer-orders.html" method="post">
+            <div class="form-group">
+              <input type="text" class="form-control" id="email-modal" placeholder="email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password-modal" placeholder="password">
+            </div>
+
+            <p class="text-center">
+              <button class="btn btn-primary"><i class="fa fa-sign-in"></i> <%= t ".login" %></button>
+            </p>
+
+          </form>
+
+          <p class="text-center text-muted"><%= t ".not_registered_yet?" %></p>
+          <p class="text-center text-muted"><a href="#"><strong><%= t ".register_now?" %></strong></a><%= t ".it_is_easy" %></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
