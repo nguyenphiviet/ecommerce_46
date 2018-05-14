@@ -1,0 +1,29 @@
+en:
+  layouts:
+    header:
+      login: "Login"
+      register: "Register"
+      contact: "Contact"
+      recently_viewed: "Recently viewed"
+      customer_login: "Customer login"
+      not_registered_yet?: "Not registered yet?"
+      register_now: "Register now"
+      it_is_easy: "! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!"
+      logout: "Log out"
+      banner: "Welcome to My Library"
+    footer:
+      pages: "Pages"
+      about: "About us"
+      term: "Terms and conditions"
+      faq: "FAQ"
+      contact: "Contact us"
+      pages: "User section"
+      login: "Login"
+      register: "Register"
+      where_to_find: "Where to find us"
+      framgia_human: "Framgia Human Development."
+      contact_page: "Go to contact page"
+      subscribe : "Subscribe!"
+      stay_in_touch: "Stay in touch"
+      copyright: "© 2018 Framgia"
+

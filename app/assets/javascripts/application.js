@@ -1,3 +1,12 @@
+//= require jquery
+//= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require respond.min
+//= require jquery.cookie
+//= require waypoints.min
+//= require modernizr
+//= require bootstrap-hover-dropdown
+//= require owl.carousel.min
+//= require front
 //= require_tree .
