@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "static_pages#home"
     resources :users, only: %i(index edit update destroy)
+    resources :products
   end
 end

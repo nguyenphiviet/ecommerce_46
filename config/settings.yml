@@ -2,7 +2,7 @@ user:
   name:
     max_length: 50
   email:
-    max_length: 255
+    max_length: 50
   phone:
     max_length: 12
   date_of_birth:
@@ -18,11 +18,15 @@ comment:
   max_length: 255
 product:
   name:
-    max_length: 255
+    max_length: 100
   limit: 4
-  min_price: 0
-  lastest_product: 3
+  min_price: 100000
+  max_price: 100000000
+  min_quantity: 1
+  max_quantity: 100
+  lastest_product: 4
   lastest_month: 1
+  image_size: [500, 500]
 home:
   limit: 3
 paginate:
