@@ -1,0 +1,5 @@
+<% if current_user.favouriting? @product %>
+  <%= render partial: "favourites/unfavor" %>
+<% else %>
+  <%= render partial: "favourites/favor" %>
+<% end %>

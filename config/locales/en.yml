@@ -1,4 +1,6 @@
 en:
+  application:
+    must_login: "you have to login!"
   static_pages:
     home:
       home: "Home"
@@ -119,6 +121,20 @@ en:
       account_activation: "Account activation"
     show:
       must_login: "Please log in"
+  products:
+    show:
+      must_login: "login to add to wishlist"
+  favourites:
+    favor:
+      action_button: "Add to wishlist"
+    create:
+      success: "Success! You added this product into your wishlist"
+      error:  "Sorry! You can't add this product from wishlist."
+    unfavor:
+      action_button: "Remove frome wishlist"
+    destroy:
+      success: "Success removed!"
+      error:  "Sorry! You can't remove this product from wishlist."
   account_activations:
     success: "Account activated!"
     invalid: "Invalid activation link"

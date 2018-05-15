@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :products, only: %i(index show) do
     resources :comments
     resources :ratings
+    resources :favourites, only: %i(create destroy)
   end
   namespace :admin do
     root "static_pages#home"
