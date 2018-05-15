@@ -44,6 +44,15 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  def remember
+    self.remember_token = User.new_token
+    update_attributes remember_digest: User.digest(remember_token)
+  end
+
+  def forget
+    update_attributes remember_digest: nil
+  end
+
   private
   def downcase_email
     self.email = email.downcase

@@ -1,0 +1,31 @@
+/* top */
+#top{
+  .top-header {
+    z-index: 1;
+      ul {
+        background: #555555;
+        li {
+          color: #fff;
+          &:hover {
+            background-color: #555555;
+            text-decoration: none;
+          }
+        }
+      }
+  }
+}
+
+/* forms */
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}

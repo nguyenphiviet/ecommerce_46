@@ -1,20 +1,35 @@
 <div id="top">
   <div class="container">
-    <div class="col-md-6 pull-right" data-animate="fadeInDown">
+    <div class="col-md-6 pull-right top-header" data-animate="fadeInDown">
       <ul class="menu">
-        <li><a href="#" data-toggle="modal" data-target="#login-modal"><%= t ".login" %></a>
-        </li>
-        <li>
-          <%= link_to t(".register"), signup_path %>
-        </li>
-        <li><%= link_to t(".home"), root_path %>
-        </li>
+        <% if logged_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t ".account" %> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="divider"></li>
+              <li>
+                <%= link_to t(".logout"), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to t(".login"), login_path %>
+          </li>
+          <li>
+            <%= link_to t(".register"), signup_path %>
+          </li>
+        <% end %>
+          <li>
+            <%= link_to t(".home"), root_path %>
+          </li>
       </ul>
     </div>
   </div>
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
     <div class="modal-dialog modal-sm">
-
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -28,11 +43,9 @@
             <div class="form-group">
               <input type="password" class="form-control" id="password-modal" placeholder="password">
             </div>
-
             <p class="text-center">
               <button class="btn btn-primary"><i class="fa fa-sign-in"></i> <%= t ".login" %></button>
             </p>
-
           </form>
           <p class="text-center text-muted"><%= t ".not_registered_yet?" %></p>
           <p class="text-center text-muted"><a href="#"><strong><%= t ".register_now?" %></strong></a><%= t ".it_is_easy" %></p>
