@@ -27,3 +27,6 @@ home:
   limit: 3
 paginate:
   comment_perpage: 5
+admin:
+  list:
+    per_page: 12

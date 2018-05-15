@@ -2,6 +2,7 @@
 *= require admin_ela/bootstrap.min
 *= require font-awesome
 *= require admin_ela/style
+*= require admin/custom
 *= require toastr
 *= require chosen
 */
