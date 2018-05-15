@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20180514093437) do
     t.date "date_of_birth"
     t.string "password_digest"
     t.string "remember_digest"
-    t.integer "permision", default: 0, null: false
+    t.integer "permission", default: 0, null: false
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"

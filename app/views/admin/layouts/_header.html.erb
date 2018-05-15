@@ -1,0 +1,28 @@
+<div class="header">
+  <nav class="navbar top-navbar navbar-expand-md navbar-light">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">
+            <span><%= t ".admin" %></span>
+        </a>
+    </div>
+    <div class="navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-md-0">
+      </ul>
+      <ul class="navbar-nav my-lg-0">
+        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= t ".admin_mail" %></a>
+          <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+            <ul class="dropdown-user">
+              <li><a href="#"><%= t ".profile" %></a></li>
+              <li><a href="/"><%= t ".go_to_library" %></a></li>
+              <li><a href="#"><%= t ".settings" %></a></li>
+              <li><a rel="nofollow" data-method="delete" href="/logout"><%= t ".logout" %></a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

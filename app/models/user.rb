@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  enum permission: {normal: 0, admin: 1}
+
   has_many :orders, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :comments, dependent: :destroy

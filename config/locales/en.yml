@@ -9,6 +9,7 @@ en:
   cant_find_product: "Cannot find product"
   static_pages:
     home:
+      home: "Home"
       sign_up: "Sign up now!"
       welcome: "Welcome to Our Store"
       hot_products: "HOT PRODUCTS"
@@ -41,9 +42,6 @@ en:
       subscribe : "Subscribe!"
       stay_in_touch: "Stay in touch"
       copyright: "© 2018 Framgia"
-  static_pages:
-    home:
-      home: "home"
   sessions:
     new:
       signin: "Sign in"
@@ -76,3 +74,25 @@ en:
     activate: "Activate"
     hi: "Hi"
     welcome: "Welcome to the Shop! Click on the link below to activate your account:"
+  admin:
+    layouts:
+      header:
+        admin: "ADMIN"
+        admin_mail: "admin@framgia.com"
+        profile: "Profile"
+        go_to_library: "Go to library"
+        settings: "Settings"
+        logout: "Logout"
+      navbar:
+        home: "HOME"
+        dashboard: "Dashboard"
+        user: "User"
+        category: "Category"
+        product: "Product"
+        list: "List"
+        create: "Create"
+    static_pages:
+      home:
+        user: "User"
+        category: "Category"
+        product: "Product"

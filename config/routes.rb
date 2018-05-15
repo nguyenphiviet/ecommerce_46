@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: %i(edit)
   resources :categories
   resources :products
+  namespace :admin do
+    root "static_pages#home"
+  end
 end
