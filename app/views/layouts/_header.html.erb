@@ -4,11 +4,10 @@
       <ul class="menu">
         <li><a href="#" data-toggle="modal" data-target="#login-modal"><%= t ".login" %></a>
         </li>
-        <li><a href="#"><%= t ".register" %></a>
+        <li>
+          <%= link_to t(".register"), signup_path %>
         </li>
-        <li><a href="#"><%= t ".contact" %></a>
-        </li>
-        <li><a href="#"><%= t ".recently_viewed" %></a>
+        <li><%= link_to t(".home"), root_path %>
         </li>
       </ul>
     </div>

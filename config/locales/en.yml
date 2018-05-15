@@ -3,8 +3,7 @@ en:
     header:
       login: "Login"
       register: "Register"
-      contact: "Contact"
-      recently_viewed: "Recently viewed"
+      home: "Home"
       customer_login: "Customer login"
       not_registered_yet?: "Not registered yet?"
       register_now: "Register now"
@@ -26,4 +25,26 @@ en:
       subscribe : "Subscribe!"
       stay_in_touch: "Stay in touch"
       copyright: "© 2018 Framgia"
-
+  static_pages:
+    home:
+      home: "home"
+  users:
+    new:
+      signup: "Sign up"
+      home: "Home"
+      heading: "New account / Sign in"
+      new_account: "New account"
+      has_account: "Not our registered customer yet?"
+      register: "Register"
+      login: "Login"
+      not_has_account: "Already our customer?"
+    create:
+      check_mail: "Please check your email to activate your account."
+      account_activation: "Account activation"
+  account_activations:
+    success: "Account activated!"
+    invalid: "Invalid activation link"
+  user_mailer:
+    activate: "Activate"
+    hi: "Hi"
+    welcome: "Welcome to the Shop! Click on the link below to activate your account:"
