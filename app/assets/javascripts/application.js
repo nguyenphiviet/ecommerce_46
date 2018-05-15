@@ -9,4 +9,3 @@
 //= require bootstrap-hover-dropdown
 //= require owl.carousel.min
 //= require front
-//= require_tree .
