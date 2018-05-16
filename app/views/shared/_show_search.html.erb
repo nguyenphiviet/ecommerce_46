@@ -1,0 +1,16 @@
+<div id="all">
+  <div id="content">
+    <div class="container">
+      <div class="col-md-9">
+        <div class="row products">
+          <% if @products.present? %>
+            <%= render @products %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <%= render "shared/right_sidebar" %>
+      </div>
+    </div>
+  </div>
+</div>
