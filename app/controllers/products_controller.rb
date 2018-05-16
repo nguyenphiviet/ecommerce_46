@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :load_all_category, only: %i(new edit show)
-  before_action :load_ratings, only: :show
-  after_action :load_comments, only: :show
+  before_action :load_categories, only: %i(show index)
+  before_action :load_ratings, only: %i(show)
+  after_action :load_comments,only: %i(show)
 
   def show
     @product = Product.find_by id: params[:id]
@@ -16,15 +16,14 @@ class ProductsController < ApplicationController
 
   private
 
-    def load_all_category
-      @categories = Category.all
-    end
+  def load_comments
+    @comments = @product.comments.paginate page: params[:page], per_page: Settings.paginate.comment_perpage
+    @comment = current_user.comments.build if logged_in?
+  end
 
-    def load_ratings
-    end
+  def load_ratings; end
 
-    def load_comments
-      @comments = @product.comments.paginate page: params[:page], per_page: Settings.paginate.comment_perpage
-      @comment = current_user.comments.build if logged_in?
-    end
+  def load_categories
+    @categories = Category.all
+  end
 end

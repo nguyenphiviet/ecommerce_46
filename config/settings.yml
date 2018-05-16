@@ -14,7 +14,7 @@ user:
   address:
     max_length: 255
 comment:
-  min_length: 6
+  min_length: 1
   max_length: 255
 product:
   name:
