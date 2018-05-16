@@ -1,0 +1,10 @@
+<% if current_cart.present? && current_cart.size > 0 %>
+  <div class="container">
+    <%= render "user_form" %>
+    <%= render "cart_review" %>
+  </div>
+<% else %>
+  <div class="alert alert-warning">
+    <%= t "order_empty" %> please go to <%= link_to t(".home"), root_path %>
+  </div>
+<% end %>

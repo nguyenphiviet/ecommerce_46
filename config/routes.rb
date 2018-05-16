@@ -5,10 +5,14 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users, except: %i(index)
   resources :account_activations, only: %i(edit)
+  resources :carts, only: %(index)
   resources :categories
+  resources :items
+  resources :order_details
+  resources :orders
   resources :products
+  resources :users, except: %i(index)
   resources :products, only: %i(index show) do
     resources :comments
     resources :ratings

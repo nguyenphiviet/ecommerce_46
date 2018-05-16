@@ -1,24 +1,23 @@
 <div class="col-md-4">
-  <div class="item">
-    <div class="product">
-      <div>
-        <div class="">
-          <a href="#">
-            <%= show_image product %>
-          </a>
-        </div>
+<div class="item">
+  <div class="product">
+    <div>
+      <div class="">
+        <%= link_to show_image(product), product %>
       </div>
-      <br>
-      <div class="text">
-        <h3><%= link_to product.name, product %></h3>
-        <p class="price"><%= product.price %></p>
-        <p class="buttons">
-          <%= link_to (t "view_detail" ), product, {:class => "btn btn-default"} %>
-          <% if product.quantity > 0 %>
-          <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><%= t "add_to_cart" %></a>
-          <% else %>
+    </div>
+    <br>
+    <div class="text">
+      <h3><%= link_to product.name, product %></h3>
+      <p class="price"><%= product.price %></p>
+      <p class="buttons">
+        <%= link_to (t "view_detail" ), product, {:class => "btn btn-default"} %>
+        <% if product.quantity > 0 %>
+        <%= link_to t("add_to_cart"), items_path(product_id: product.id),
+          method: :post, remote: true, class: "btn btn-primary" %>
+        <% else %>
           <button class="btn btn-warning"><%= t "sold_out" %></button>
-          <% end %>
+        <% end %>
         </p>
       </div>
     </div>

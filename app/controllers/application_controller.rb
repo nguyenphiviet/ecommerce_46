@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
+  include CartsHelper
 
   private
 
@@ -10,5 +11,10 @@ class ApplicationController < ActionController::Base
       flash[:danger] = t ".must_login"
       redirect_to login_url
     end
+  end
+
+  def error_redirect
+    flash[:warning] = t "error"
+    redirect_to root_path
   end
 end

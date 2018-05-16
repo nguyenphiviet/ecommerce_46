@@ -1,0 +1,29 @@
+<div class="col-md-6" id="checkout">
+  <div class="box">
+    <h1><%= t "check_out" %></h1>
+    <div class="content">
+      <div class="table-responsive">
+        <table class="table" style="text-align: center;">
+          <thead>
+            <tr>
+              <th><%= t ".name" %></th>
+              <th><%= t ".quantity" %></th>
+              <th><%%= t "unit_price" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% current_cart.each do |item_cart| %>
+              <%= render "item_review", item: item_cart, show_total: true %>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="5">Total</th>
+              <th><%= total_cart %></th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

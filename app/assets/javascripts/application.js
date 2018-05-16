@@ -9,3 +9,6 @@
 //= require bootstrap-hover-dropdown
 //= require owl.carousel.min
 //= require front
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
