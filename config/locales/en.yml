@@ -18,6 +18,7 @@ en:
   search: "Search"
   delete: "Delete"
   update: "Update"
+  order_success: "Order success!"
   error: "Error, please try again!"
   order_empty: "Empty order!"
   delete_fail: "Delete fail, please try again!"

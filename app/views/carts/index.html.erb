@@ -4,7 +4,7 @@
       <div class="col-md-12" id="basket">
         <div class="box">
           <h1><%= t ".title" %></h1>
-          <% if current_cart.size > 0 %>
+          <% if current_cart.present? %>
           <div class="table-responsive">
             <table class="table">
               <thead>

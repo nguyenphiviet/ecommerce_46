@@ -1,4 +1,5 @@
 module CartsHelper
+
   def current_cart
     @current_cart = session[:cart] if session[:cart]
   end
@@ -11,11 +12,11 @@ module CartsHelper
     total
   end
 
-  def place_an_order
-    session[:cart]
-  end
-
-  def update_cart
-    session[:cart] = @cart
+  def update_quantity
+    current_cart.each do |item|
+      product = Product.find_by id: item["product_id"]
+      quantity_update = product.quantity.to_i - item["quantity"].to_i
+      Product.where(:id => item["product_id"]).update_all(:quantity => quantity_update)
+    end
   end
 end

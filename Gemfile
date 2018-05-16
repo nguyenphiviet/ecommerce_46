@@ -7,6 +7,7 @@ end
 
 gem "bcrypt", "3.1.11"
 gem "bootstrap-sass", "3.3.7"
+gem "bootstrap-kaminari-views"
 gem "carrierwave", "1.2.2"
 gem "chosen-rails"
 gem "ckeditor", github: "galetahub/ckeditor"
