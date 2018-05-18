@@ -1,0 +1,32 @@
+<div class="left-sidebar">
+  <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="scroll-sidebar" style="overflow: hidden; width: auto; height: 100%;">
+    <nav class="sidebar-nav active">
+      <ul id="sidebarnav" class="in">
+        <li class="nav-devider"></li>
+        <li class="nav-label"><%= t ".home" %></li>
+        <li class="active">
+          <a href="/admin" class="active">
+            <i class="fa fa-tachometer"><%= t ".dashboard" %></i></a>
+        </li>
+        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu"><%= t ".user" %></span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="/admin/users"><%= t ".list" %></a></li>
+            <li><a href="/admin/users/new"><%= t ".create" %></a></li>
+          </ul>
+        </li>
+        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu"><%= t ".category" %></span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="/admin/categories"><%= t ".list" %></a></li>
+            <li><a href="/admin/categories/new"><%= t ".create" %></a></li>
+          </ul>
+        </li>
+      <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu"><%= t ".product" %></span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="/admin/books"><%= t ".list" %></a></li>
+            <li><a href="/admin/books/new"><%= t ".create" %></a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div><div class="slimScrollBar" style="background: rgb(220, 220, 220); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; left: 1px; height: 303.222px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; left: 1px;"></div></div>
+</div>

@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.date :date_of_birth
       t.string :password_digest
       t.string :remember_digest
-      t.integer :permision, null: false, default: 0
+      t.integer :permission, null: false, default: 0
       t.string :activation_digest
       t.boolean :activated, default: false
       t.datetime :activated_at

@@ -1,0 +1,13 @@
+//= require jquery
+//= require jquery_ujs
+//= require toastr
+//= require admin_ela/bootstrap.min.js
+//= require admin_ela/custom.min.js
+//= require admin_ela/sidebarmenu.js
+//= require admin_ela/sticky-kit.min.js
+//= require admin/jquery.validate.min.js
+//= require ckeditor/init
+//= require chosen-jquery
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
