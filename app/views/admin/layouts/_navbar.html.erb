@@ -10,8 +10,7 @@
         </li>
         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu"><%= t ".user" %></span></a>
           <ul aria-expanded="false" class="collapse">
-            <li><a href="/admin/users"><%= t ".list" %></a></li>
-            <li><a href="/admin/users/new"><%= t ".create" %></a></li>
+            <li><%= link_to t(".list"), admin_users_path %></li>
           </ul>
         </li>
         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu"><%= t ".category" %></span></a>
