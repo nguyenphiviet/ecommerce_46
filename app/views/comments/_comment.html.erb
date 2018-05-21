@@ -1,0 +1,10 @@
+<% if comment.user.present? %>
+  <div class="media-left">
+    <img src="img/img_avatar1.png" class="media-object" style="width:60px">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= comment.user.name %></h4>
+    <p><%= comment.content %></p>
+  </div>
+  <hr>
+<% end %>
