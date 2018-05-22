@@ -16,6 +16,6 @@ class Product < ApplicationRecord
                    WHERE (order_details.created_at >= DATE_SUB(CURRENT_DATE(),INTERVAL " + month.to_s +  " MONTH))
                    GROUP BY `order_details`.`product_id`
                    ORDER BY sum(order_details.quantity) DESC"
-    Product.where("id IN (#{product_ids})").limit(Settings.product.limit)
+    Product.select("name", "price", "image", "quantity", "description").where("id IN (#{product_ids})").limit(Settings.product.limit)
   end
 end

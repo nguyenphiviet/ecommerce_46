@@ -20,10 +20,8 @@
       </div>
     </div>
     <div class="navbar-collapse collapse" id="navigation">
-
       <ul class="nav navbar-nav navbar-left">
-        <li class="active"><a href="#"><%= t "home" %></a>
-        </li>
+        <li class="active"><%= link_to t("home"), root_path %></li>
         <li class="dropdown yamm-fw">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"><%= t "product" %><b class="caret"></b></a>
           <% if @categories.present? %>
@@ -44,7 +42,6 @@
         </li>
       </div>
       <div class="navbar-buttons">
-
         <div class="navbar-collapse collapse right" id="basket-overview">
           <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
         </div>
@@ -55,7 +52,6 @@
           </button>
         </div>
       </div>
-
       <div class="collapse clearfix" id="search">
         <%= form_tag products_path, method: :get, class: "navbar-form" do %>
         <%= text_field_tag :name, params[:name], class: "form-control" %>
@@ -63,4 +59,5 @@
         <% end %>
       </div>
     </div>
+</div>
 

@@ -1,7 +1,7 @@
-<%= form_for [@product, @product.comments.build], :class => "form-control", remote: true do |f| %>
+<%= form_for [@product, @product.comments.build], class: "form-control", remote: true do |f| %>
   <div class="field">
-    <%= render 'shared/error_messages', object: f.object %>
-    <%= f.hidden_field :product_id %>
+    <%= render "shared/error_messages", object: f.object %>
+
     <%= f.text_area :content, placeholder: t("comment_placeholer"), class: "form-control comment-area", :id=>"form-comment" %>
   </div>
   <%= f.submit t("comment"), class: "btn btn-info"%>

@@ -1,10 +1,19 @@
 <% if comment.user.present? %>
+<div id="comment-<%= comment.id %>">
   <div class="media-left">
     <img src="img/img_avatar1.png" class="media-object" style="width:60px">
   </div>
-  <div class="media-body">
+  <div class="option-comment">
+    <% if logged_in? && can_edit_comment?(comment) %>
+    <%= link_to t("edit"), edit_product_comment_path(comment.product, comment), class: "btn btn-primary", remote: true %>
+    <%= link_to t("delete"), product_comment_path(comment.product, comment), class: "btn btn-primary", remote: true, method: :delete, data: {confirm: t("confirm_delete")} %>
+    <% end %>
+  </div>
+  <div class="comment-<%= comment.id %>">
     <h4 class="media-heading"><%= comment.user.name %></h4>
     <p><%= comment.content %></p>
+    <hr>
   </div>
-  <hr>
+</div>
+</div>
 <% end %>
