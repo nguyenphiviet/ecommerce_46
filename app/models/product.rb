@@ -6,7 +6,23 @@ class Product < ApplicationRecord
   has_many :favourites, dependent: :destroy
   has_many :order_details
 
-  validates :name, presence: true, length: {maximum: Settings.product.name.max_length}
+  enum status: {normal: 0, hot: 1}
+  mount_uploader :image, ImageUploader
+
+  validates :name, presence: true, uniqueness: {case_sensitive: false},
+    length: {maximum: Settings.product.name.max_length}
+  validates :price, presence: true,
+     numericality: {less_than_or_equal_to: Settings.product.max_price,
+      greater_than_or_equal_to: Settings.product.min_price, only_integer: true}
+  validates :quantity, numericality:
+    {less_than_or_equal_to: Settings.product.max_quantity,
+      greater_than_or_equal_to: Settings.product.min_quantity,
+      only_integer: true}
+  validate :image_size
+  validates :image, presence: true
+  validates :category_id, presence: true
+  validates :provider_id, presence: true
+
   scope :lastest_product, ->(number){order(created_at: :desc).limit(number)}
   scope :search_by_name, ->(name){where (" name like ?"), "%#{name}%"}
 
@@ -17,5 +33,12 @@ class Product < ApplicationRecord
                    GROUP BY `order_details`.`product_id`
                    ORDER BY sum(order_details.quantity) DESC"
     Product.select("name", "price", "image", "quantity", "description").where("id IN (#{product_ids})").limit(Settings.product.limit)
+  end
+
+  private
+
+  def image_size
+    errors.add(:image, t("admin.products.new.min_size_image")) if
+      image.size > 1.megabytes
   end
 end

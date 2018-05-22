@@ -21,8 +21,8 @@
         </li>
       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu"><%= t ".product" %></span></a>
           <ul aria-expanded="false" class="collapse">
-            <li><a href="/admin/books"><%= t ".list" %></a></li>
-            <li><a href="/admin/books/new"><%= t ".create" %></a></li>
+            <li><%= link_to t(".list"), admin_products_path %></li>
+            <li><%= link_to t(".create"), new_admin_product_path %></li>
           </ul>
         </li>
       </ul>

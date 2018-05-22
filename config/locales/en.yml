@@ -128,6 +128,16 @@ en:
         active: "• Active"
         inactive: "• Inactive"
         sure: "You sure?"
+    products:
+      new:
+        page_title: "Users"
+        panel_title: "Add new product"
+        create: "Create"
+        min_size_image: "should be less than 1MB"
+        over_size: "Maximum file size is 1MB. Please choose a smaller file."
+      create:
+        create_fail: "some thing fails!"
+        success: "create success!"
   views:
     pagination:
       first: "&laquo; First"
