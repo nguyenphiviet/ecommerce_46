@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :users, except: %i(index)
   resources :products, only: %i(index show) do
     resources :comments
-    resources :ratings
+    resources :ratings, only: %i(create)
     resources :favourites, only: %i(create destroy)
   end
   namespace :admin do

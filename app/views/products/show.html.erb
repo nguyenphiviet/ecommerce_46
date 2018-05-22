@@ -21,6 +21,9 @@
           <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material & care and sizing</a>
           </p>
           <p class="price"><%= @product.price %></p>
+          <div class="row text-center">
+            <%= render partial: "ratings/rating_form" %>
+          </div>
           <div class="row text-center buttons">
             <% if @product.quantity > 0 %>
               <%= link_to t("add_to_cart"), items_path(product_id: @product.id), method: :post, remote: true, class: "btn btn-primary col-sm-4 col-sm-offset-2" %>

@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
     @product = Product.find_by id: params[:id]
     @favourite = current_user.favourites.find_by product_id: @product.id if
       logged_in? && current_user.favouriting?(@product)
+    @rating = current_user.ratings.find_by product_id: @product.id if
+      logged_in? && current_user.rating?(@product)
     return if @product
     flash[:danger] = t "cant_find_product"
     redirect_to root_url

@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :suggestions, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favourites, dependent: :destroy
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
 
   attr_accessor :remember_token, :activation_token
   before_save :downcase_email
@@ -65,6 +65,10 @@ class User < ApplicationRecord
 
   def favouriting? product
     return favourites.find_by(product: product.id).nil? ? false : true
+  end
+
+  def rating? product
+    return ratings.find_by(product: product.id).nil? ? false : true
   end
 
   private

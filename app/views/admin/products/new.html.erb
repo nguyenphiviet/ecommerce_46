@@ -57,7 +57,7 @@
 
       <div class="form-group">
         <%= f.label :provider_id %>
-        <%= f.collection_select :provider_id, Category.order(:name), :id, :name,
+        <%= f.collection_select :provider_id, Provider.order(:name), :id, :name,
           {prompt: true}, {class: "form-control"} %>
       </div>
 
