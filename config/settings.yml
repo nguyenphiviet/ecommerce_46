@@ -34,3 +34,6 @@ paginate:
 admin:
   list:
     per_page: 12
+cart:
+  item_id_default: 1
+  default_quantity: 1

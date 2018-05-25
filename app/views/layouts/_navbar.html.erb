@@ -1,23 +1,9 @@
  <div class="navbar navbar-default yamm" role="navigation" id="navbar">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+      <a class="navbar-brand home" href="<%= root_path %>" data-animate-hover="bounce">
         <%= image_tag("img/logo.png", :class => "hidden-xs" ) %>
-        <%= image_tag("img/logo-small.png", alt: "", :class => "visible-xs" ) %><span class="sr-only">Obaju - go to homepage</span>
       </a>
-      <div class="navbar-buttons">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <i class="fa fa-align-justify"></i>
-        </button>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
-          <span class="sr-only">Toggle search</span>
-          <i class="fa fa-search"></i>
-        </button>
-        <a class="btn btn-default navbar-toggle" href="basket.html">
-          <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
-        </a>
-      </div>
     </div>
     <div class="navbar-collapse collapse" id="navigation">
       <ul class="nav navbar-nav navbar-left">
@@ -43,7 +29,15 @@
       </div>
       <div class="navbar-buttons">
         <div class="navbar-collapse collapse right" id="basket-overview">
-          <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+          <a href="<%= carts_path %>" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i>
+          <span class="hidden-sm" id="cart">
+            <% if current_cart.present? %>
+              <%= current_cart.size %> items in cart
+            <% else %>
+              0 items in cart
+            <% end %>
+          </span>
+          </a>
         </div>
         <div class="navbar-collapse collapse right" id="search-not-mobile">
           <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">

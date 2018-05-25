@@ -1,0 +1,47 @@
+<div id="all">
+  <div id="content">
+    <div class="container">
+      <div class="col-md-12" id="basket">
+        <div class="box">
+          <h1><%= t ".title" %></h1>
+          <% if current_cart.size > 0 %>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th><%= t "product" %></th>
+                  <th><%= t "quantity" %></th>
+                  <th><%= t "unit_price" %></th>
+                  <th><%= t "total" %></th>
+                </tr>
+              </thead>
+              <tbody class="cart">
+                <%= render "cart" %>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="5"><%= t "total" %></th>
+                  <th class="total"><%= total_cart %></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="box-footer">
+            <div class="pull-left">
+              <a href="<%= root_path %>" class="btn btn-default"><i class="fa fa-chevron-left"></i><%= t ".continue_shopping" %></a>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-default"><i class="fa fa-trash-o"></i><%= t".delete_cart" %> </button>
+              <%= link_to t(".checkout"), orders_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+          <% else %>
+          <div class="alert alert-warning">
+            <%= t".empty_cart" %>
+         </div>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
