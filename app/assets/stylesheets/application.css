@@ -6,5 +6,6 @@
 *= require owl.theme
 *= require style.default
 *= require custom
+*= require toastr
 *= require_self
 */

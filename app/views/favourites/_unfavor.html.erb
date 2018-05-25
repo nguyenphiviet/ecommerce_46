@@ -1,0 +1,5 @@
+<%= link_to [@product, @favourite],
+  method: :delete, remote: true, class: "btn btn-default" do %>
+  <i class="fa fa-heart color-red"></i>
+  <%= t ".action_button" %>
+<% end %>

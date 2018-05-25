@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by id: params[:id]
+    @favourite = current_user.favourites.find_by product_id: @product.id if
+      logged_in? && current_user.favouriting?(@product)
     return if @product
     flash[:danger] = t "cant_find_product"
     redirect_to root_url
@@ -17,7 +19,8 @@ class ProductsController < ApplicationController
   private
 
   def load_comments
-    @comments = @product.comments.paginate page: params[:page], per_page: Settings.paginate.comment_perpage
+    @comments = @product.comments
+      .page(params[:page]).per(Settings.paginate.comment_perpage)
     @comment = current_user.comments.build if logged_in?
   end
 

@@ -21,14 +21,20 @@
           <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material & care and sizing</a>
           </p>
           <p class="price"><%= @product.price %></p>
-          <p class="text-center buttons">
+          <div class="row text-center buttons">
             <% if @product.quantity > 0 %>
-              <%= link_to t("add_to_cart"), items_path(product_id: @product.id), method: :post, remote: true, class: "btn btn-primary" %>
+              <%= link_to t("add_to_cart"), items_path(product_id: @product.id), method: :post, remote: true, class: "btn btn-primary col-sm-4 col-sm-offset-2" %>
             <% else %>
               <button class = "btn btn-warning"><%= t "sold_out" %></button>
             <% end %>
-            <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i><%= t "add_to_wishlist" %></a>
-          </p>
+            <div class="product-favourite col-sm-4">
+              <% if logged_in? %>
+                <%= render partial: "favourites/form" %>
+              <% else %>
+                <a href="<%= login_path %>" class="btn btn-default"><i class="fa fa-heart"></i><%= t ".must_login" %></a>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

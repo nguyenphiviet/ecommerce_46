@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :ratings
 
   attr_accessor :remember_token, :activation_token
-  before_save   :downcase_email
+  before_save :downcase_email
   before_create :create_activation_digest
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -55,9 +55,22 @@ class User < ApplicationRecord
     update_attributes remember_digest: nil
   end
 
+  def favourite product
+    favourites.create product_id: product.id
+  end
+
+  def unfavourite product
+    favourites.find_by(product_id: product.id).destroy
+  end
+
+  def favouriting? product
+    return favourites.find_by(product: product.id).nil? ? false : true
+  end
+
   private
+
   def downcase_email
-    self.email = email.downcase
+    email.downcase!
   end
 
   def create_activation_digest

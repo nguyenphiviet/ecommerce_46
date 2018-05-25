@@ -1,0 +1,6 @@
+<% if flash[:success] %>
+  $('.product-favourite').html('<%= j render "favor" %>');
+  toastr.success('<%= flash[:success] %>');
+<% else %>
+  toastr.error('<%= t ".error" %>');
+<% end %>
