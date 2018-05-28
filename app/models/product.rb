@@ -5,9 +5,11 @@ class Product < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :favourites, dependent: :destroy
   has_many :order_details
+  has_many :images
+  accepts_nested_attributes_for :images,
+    reject_if: ->(attrs) {attrs['image_url'].blank?}
 
   enum status: {normal: 0, hot: 1}
-  mount_uploader :image, ImageUploader
 
   validates :name, presence: true, uniqueness: {case_sensitive: false},
     length: {maximum: Settings.product.name.max_length}
@@ -18,9 +20,9 @@ class Product < ApplicationRecord
     {less_than_or_equal_to: Settings.product.max_quantity,
       greater_than_or_equal_to: Settings.product.min_quantity,
       only_integer: true}
-  validate :image_size
   validates :category_id, presence: true
   validates :provider_id, presence: true
+  validate {images_empty}
 
   scope :lastest_product, ->(number){order(created_at: :desc).limit(number)}
   scope :search_by_name, ->(name){where (" name like ?"), "%#{name}%"}
@@ -36,8 +38,9 @@ class Product < ApplicationRecord
 
   private
 
-  def image_size
-    errors.add(:image, t("admin.products.new.min_size_image")) if
-      image.size > 1.megabytes
+  def images_empty
+    errors.add(:images, :blank,
+      message: I18n.t("admin.products.new.not_empty")) unless
+      images.count > 0
   end
 end

@@ -210,9 +210,13 @@ en:
         create: "Create"
         min_size_image: "should be less than 1MB"
         over_size: "Maximum file size is 1MB. Please choose a smaller file."
+        add_image: "Add image"
+        not_empty: "cannot be empty123"
       create:
         create_fail: "some thing fails!"
         success: "create success!"
+      image_fields:
+        remove: "remove img"
   views:
     pagination:
       first: "&laquo; First"

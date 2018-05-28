@@ -49,4 +49,4 @@ bower.json
 /config/application.yml
 /config/database.yml
 /public/uploads
-/public/javascripts/en.js
+/public/javascripts
