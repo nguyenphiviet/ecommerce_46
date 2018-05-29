@@ -1,0 +1,19 @@
+<tr>
+  <td><%= index_for index, @products.current_page,
+    Settings.admin.list.per_page %></td>
+  <td><%= product.name %></td>
+  <td><%= product.price %></td>
+  <td><%= product.quantity %></td>
+  <td><%= product.status %></td>
+  <td><%= product.rate_average %></td>
+  <td><%= product.category.name %></td>
+  <td><%= product.provider.name %></td>
+  <td align="center">
+    <%= link_to edit_admin_product_path(product) do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to admin_product_path(product), method: :delete,remote: true, data:{confirm: t(".sure")} do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

@@ -194,7 +194,7 @@ en:
     users:
       index:
         page_title: "Users"
-        panel_title: Show list Users
+        panel_title: "Show list Users"
         name: "Name"
         email: "Email"
         address: "Address"
@@ -204,6 +204,16 @@ en:
         inactive: "• Inactive"
         sure: "You sure?"
     products:
+      index:
+        page_title: "Products"
+        panel_title: "Show list Products"
+        name: "Name"
+        price: "Price"
+        quantity: "Quantity"
+        status: "Status"
+        rating: "Rating"
+        category: "Category"
+        provider: "Provider"
       new:
         page_title: "Users"
         panel_title: "Add new product"
