@@ -1,0 +1,6 @@
+<% if flash[:success] %>
+  $('#product-rating').html('<%= j render "old" %>');
+  toastr.success('<%= flash[:success] %>');
+<% else %>
+  toastr.error('<%= t ".error" %>');
+<% end %>

@@ -1,0 +1,8 @@
+<%= t ".rating_average" %>
+<span class="rating-average color-red">
+  <%= @product.rate_average.to_f.round 2 %>
+</span>
+<p>
+  <%= t ".your_score" %>
+  <span class="your_score color-red"><%= @rating.point.to_i %></span>
+</p>

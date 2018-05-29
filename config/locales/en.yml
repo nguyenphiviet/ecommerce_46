@@ -76,7 +76,8 @@ en:
       register_now: "Register now"
       it_is_easy: "! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!"
       logout: "Log out"
-      banner: "Welcome to My Library"
+      banner: "Welcome to My Shoping Cart"
+      admin: "Admin"
     footer:
       pages: "Pages"
       about: "About us"
@@ -92,6 +93,27 @@ en:
       subscribe : "Subscribe!"
       stay_in_touch: "Stay in touch"
       copyright: "© 2018 Framgia"
+  ratings:
+    rating_form:
+      require_login: "Please login to rate product"
+    new:
+      rating_average: "Product Star Rating Average:"
+      star_10: "Awesome - 10 stars"
+      star_9: "Pretty good - 9 stars"
+      star_8: "Pretty good - 8 stars"
+      star_7: "Meh - 7 stars"
+      star_6: "Meh - 6 stars"
+      star_5: "Kinda bad - 5 stars"
+      star_4: "Kinda bad - 4 stars"
+      star_3: "Meh - 3 stars"
+      star_2: "Sucks big time - 2 star"
+      star_1: "Sucks big time - 1 stars"
+    create:
+      success: "Thank you for rating!"
+      error: "something wrong!"
+    old:
+      your_score: "Your rated score:"
+      rating_average: "Product Star Rating Average!:"
   sessions:
     new:
       signin: "Sign in"
