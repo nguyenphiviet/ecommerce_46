@@ -1,5 +1,9 @@
 class Admin::ProductsController < Admin::BaseController
-  def index; end
+  def index
+    @products = Product.select(:id, :name, :price, :quantity, :status,
+      :rate_average, :category_id, :provider_id).newest
+      .page(params[:page]).per(Settings.admin.list.per_page)
+  end
 
   def new
     @product = Product.new

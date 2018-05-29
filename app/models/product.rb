@@ -26,6 +26,7 @@ class Product < ApplicationRecord
 
   scope :lastest_product, ->(number){order(created_at: :desc).limit(number)}
   scope :search_by_name, ->(name){where (" name like ?"), "%#{name}%"}
+  scope :newest, ->{order created_at: :desc}
 
   def self.hot_product_by_month month
     product_ids = "SELECT `order_details`.`product_id`
