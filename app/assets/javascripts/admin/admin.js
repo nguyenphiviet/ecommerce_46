@@ -13,3 +13,4 @@
 //= require i18n/translations
 //= require admin/*
 //= require config
+//= require cocoon

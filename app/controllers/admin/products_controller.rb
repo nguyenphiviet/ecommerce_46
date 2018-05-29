@@ -21,9 +21,11 @@ class Admin::ProductsController < Admin::BaseController
   def update; end
 
   private
+
   def product_params
     params.require(:product).permit :name, :price, :quantity,
       :status, :description, :guarantee_info,
-      :image, :category_id, :provider_id
+      :category_id, :provider_id,
+      images_attributes: [:id, :image_url, :_destroy]
   end
 end
