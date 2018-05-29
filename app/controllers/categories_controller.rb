@@ -6,7 +6,8 @@ class CategoriesController < ApplicationController
 
   def load_products
     category = Category.find_by id: params[:id]
-    @products = category.products if category
+    @result = category.products if category
+    @products = @result.page(params[:page]).per(Settings.paginate.product_perpage)
   end
 
   def load_categories

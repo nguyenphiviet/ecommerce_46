@@ -1,7 +1,6 @@
 <% if current_cart.present? && current_cart.size > 0 %>
   <div class="container">
-    <%= render "user_form" %>
-    <%= render "cart_review" %>
+    <%= render "form_order" %>
   </div>
 <% else %>
   <div class="alert alert-warning">
