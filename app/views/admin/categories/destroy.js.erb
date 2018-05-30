@@ -1,0 +1,6 @@
+<% if flash[:success] %>
+  $('#category-<%= @category.id %>').remove();
+  toastr.success('<%= flash[:success] %>');
+<% else %>
+  toastr.error('<%= flash[:error] %>');
+<% end %>

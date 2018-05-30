@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528082948) do
+ActiveRecord::Schema.define(version: 20180530044047) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "priority", default: 0
+    t.boolean "acceted", default: true
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -39,11 +41,11 @@ ActiveRecord::Schema.define(version: 20180528082948) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "url"
-    t.bigint "user_id"
+    t.text "image_url"
+    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_images_on_user_id"
+    t.index ["product_id"], name: "index_images_on_user_id"
   end
 
   create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -134,7 +136,7 @@ ActiveRecord::Schema.define(version: 20180528082948) do
   add_foreign_key "comments", "users"
   add_foreign_key "favourites", "products"
   add_foreign_key "favourites", "users"
-  add_foreign_key "images", "users"
+  add_foreign_key "images", "users", column: "product_id"
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"

@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   before_action :load_categories, only: %i(show index)
-  before_action :load_ratings, only: %i(show)
   after_action :load_comments,only: %i(show)
 
   def show
@@ -27,9 +26,7 @@ class ProductsController < ApplicationController
     @comment = current_user.comments.build if logged_in?
   end
 
-  def load_ratings; end
-
   def load_categories
-    @categories = Category.all
+    @categories = Category.enable
   end
 end

@@ -17,15 +17,14 @@
     </div>
   </div>
   <div class="panel-body">
-    <table class="table table-striped table-bordered table-list">
+    <table class="table table-striped table-bordered table-list users-index">
       <thead>
         <tr>
-          <th style="width: 20%;"><%= t ".name" %></th>
-          <th style="width: 20%;"><%= t ".email" %></th>
-          <th style="width: 30%;"><%= t ".address" %></th>
-          <th style="width: 10%;"><%= t ".phone" %></th>
-          <th style="width: 10%;"><%= t ".activated" %></th>
-          <th style="width: 10%;"><em class="fa fa-cog"></em></th>
+          <th class="name"><%= t ".name" %></th>
+          <th class="email"><%= t ".email" %></th>
+          <th class="address"><%= t ".address" %></th>
+          <th class="phone"><%= t ".phone" %></th>
+          <th class="activated"><%= t ".activated" %></th>
         </tr>
       </thead>
       <tbody>
@@ -42,14 +41,6 @@
               <span class="status text-danger"><%= t ".inactive" %></span>
             <% end %>
 
-          </td>
-          <td align="center">
-            <%= link_to edit_admin_user_path(user) do %>
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            <% end %>
-            <%= link_to admin_user_path(user), method: :delete,remote: true, data:{confirm: t(".sure")} do %>
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            <% end %>
           </td>
         </tr>
       <% end %>

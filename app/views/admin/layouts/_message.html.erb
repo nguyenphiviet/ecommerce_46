@@ -1,3 +1,5 @@
-<% flash.each do |type, message| %>
-  <%= javascript_tag "toastr.#{type}('#{message}');" %>
-<% end %>
+<%= javascript_tag defer: 'defer' do -%>
+  <% flash.each do |type, message| %>
+    toastr.<%= type %>('<%= message %>');
+  <% end %>
+<% end -%>

@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     root "static_pages#home"
     resources :users, only: %i(index edit update destroy)
     resources :products
+    resources :categories
   end
 end
