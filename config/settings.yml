@@ -40,3 +40,8 @@ cart:
   default_quantity: 1
 rating:
   point: !ruby/range 1..10
+category:
+  name:
+    max_length: 30
+  priority:
+    min_value: 0

@@ -1,0 +1,39 @@
+<% provide :title,  t(".page_title") %>
+
+<div class="panel panel-default panel-table">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col col-xs-6">
+        <h3 class="panel-title"><%= t ".panel_title" %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body ">
+  <div class="row">
+    <div class="col-md-8">
+    <%= form_for [:admin, @category] do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :priority %>
+        <%= f.number_field :priority, class: "form-control", value: 1 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :accepted %>
+        <%= f.select :accepted, options_for_select([:true, :false]),{},
+          {class: "form-control"} %>
+      </div>
+
+      <%= f.submit t(".create"), class: "btn btn-primary" %>
+    <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= render "admin/shared/error_messages", object: @category %>
+    </div>
+  </div>
+  </div>
+</div>

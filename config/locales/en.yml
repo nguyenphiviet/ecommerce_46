@@ -227,6 +227,20 @@ en:
         success: "create success!"
       image_fields:
         remove: "remove img"
+    categories:
+      index:
+        page_title: "Categories"
+        panel_title: "Show list Categories"
+        name: "Name"
+        priority: "Priority"
+        status: "Status"
+      new:
+        page_title: "Categories"
+        panel_title: "Add new cate"
+        create: "Create new cate"
+      create:
+        create_fail: "some thing fails!"
+        success: "create success!"
   views:
     pagination:
       first: "&laquo; First"
