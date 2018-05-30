@@ -1,6 +1,7 @@
-<div class="nested-fields">
+<p>
   <%= f.label :image_url %>
   <%= f.file_field :image_url %>
 
-  <%= link_to_remove_association t(".remove"), f %>
-</div>
+  <%= f.label :_destroy %>
+  <%= f.check_box :_destroy %>
+</p>

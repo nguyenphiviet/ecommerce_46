@@ -174,7 +174,7 @@ en:
         admin: "ADMIN"
         admin_mail: "admin@framgia.com"
         profile: "Profile"
-        go_to_library: "Go to library"
+        go_to_shop: "Go to shop"
         settings: "Settings"
         logout: "Logout"
       navbar:
@@ -214,20 +214,30 @@ en:
         rating: "Rating"
         category: "Category"
         provider: "Provider"
+      product:
         sure: "You sure?"
       new:
-        page_title: "Users"
-        panel_title: "Add new product"
-        create: "Create"
+        page_title: "Products"
+        panel_title: "Edit product"
+        button: "Create"
         min_size_image: "should be less than 1MB"
         over_size: "Maximum file size is 1MB. Please choose a smaller file."
         add_image: "Add image"
-        not_empty: "cannot be empty123"
+        not_empty: "cannot be empty"
       create:
         create_fail: "some thing fails!"
         success: "create success!"
       image_fields:
         remove: "remove img"
+      edit:
+        page_title: "Products"
+        panel_title: "Add new product"
+        button: "Edit"
+        add_image: "Add image"
+        not_empty: "cannot be empty"
+      update:
+        create_fail: "some thing fails!"
+        success: "update success!"
     categories:
       index:
         page_title: "Categories"
