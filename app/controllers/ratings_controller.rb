@@ -2,10 +2,9 @@ class RatingsController < ApplicationController
   before_action :logged_in_user
 
   def create
-    @product = Product.find params[:product_id]
-    if @product
+    if Product.exists? params[:product_id]
       @rating = current_user.ratings.build rating_params
-      flash.now[:success] = t ".success" if @rating.save
+      @product = Product.find params[:product_id] if @rating.save
     end
     respond_to do |format|
       format.html {redirect_to request.referrer}

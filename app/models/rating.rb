@@ -4,7 +4,8 @@ class Rating < ApplicationRecord
 
   after_save :update_product_rate_average
 
-  validates :point, presence: true
+  validates :point, presence: true, inclusion: Settings.rating.point,
+    numericality: {only_integer: true}
 
   scope :rating_average, ->(product_id){where(product_id: product_id).average(:point)}
 
