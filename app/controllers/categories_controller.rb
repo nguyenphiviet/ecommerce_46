@@ -11,6 +11,6 @@ class CategoriesController < ApplicationController
   end
 
   def load_categories
-    @categories = Category.all
+    @categories = Category.enable
   end
 end

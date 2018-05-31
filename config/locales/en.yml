@@ -214,6 +214,7 @@ en:
         rating: "Rating"
         category: "Category"
         provider: "Provider"
+        sure: "You sure?"
       new:
         page_title: "Users"
         panel_title: "Add new product"
@@ -227,6 +228,37 @@ en:
         success: "create success!"
       image_fields:
         remove: "remove img"
+    categories:
+      index:
+        page_title: "Categories"
+        panel_title: "Show list Categories"
+        name: "Name"
+        priority: "Priority"
+        status: "Status"
+      category:
+        sure: "You sure?"
+      new:
+        page_title: "Categories"
+        panel_title: "Add new cate"
+        button: "Create new cate"
+      create:
+        fail: "some thing fails!"
+        success: "create success!"
+      edit:
+        page_title: "Categories"
+        panel_title: "Add new cate"
+        button: "Edit cate"
+        find_category: "can't find category"
+      update:
+        fail: "some thing fails!"
+        success: "update success!"
+        find_category: "can't find category"
+      destroy:
+        fail: "some thing fails!"
+        success: "delete success!"
+        find_category: "can't find category"
+      load_category:
+        find_category: "can't find category"
   views:
     pagination:
       first: "&laquo; First"

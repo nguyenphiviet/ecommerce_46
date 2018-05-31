@@ -1,0 +1,22 @@
+<% provide :title, t(".page_title") %>
+<% provide :button, t(".button") %>
+
+<div class="panel panel-default panel-table">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col col-xs-6">
+        <h3 class="panel-title"><%= t ".panel_title" %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body ">
+  <div class="row">
+    <div class="col-md-8">
+      <%= render "form" %>
+    </div>
+    <div class="col-md-4">
+      <%= render "admin/shared/error_messages", object: @category %>
+    </div>
+  </div>
+  </div>
+</div>

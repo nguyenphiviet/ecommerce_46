@@ -1,0 +1,13 @@
+<tr id="category-<%= category.id %>">
+  <td><%= category.name %></td>
+  <td><%= category.priority %></td>
+  <td align="center">
+    <%= link_to edit_admin_category_path(category) do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to admin_category_path(category), method: :delete,
+      remote: true, data:{confirm: t(".sure")} do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>
