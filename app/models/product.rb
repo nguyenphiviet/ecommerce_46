@@ -6,8 +6,8 @@ class Product < ApplicationRecord
   has_many :favourites, dependent: :destroy
   has_many :order_details
   has_many :images
-  accepts_nested_attributes_for :images,
-    reject_if: ->(attrs) {attrs['image_url'].blank?}
+  accepts_nested_attributes_for :images, allow_destroy: true,
+    reject_if: :all_blank
 
   enum status: {normal: 0, hot: 1}
 
@@ -22,7 +22,6 @@ class Product < ApplicationRecord
       only_integer: true}
   validates :category_id, presence: true
   validates :provider_id, presence: true
-  validate {images_empty}
 
   scope :lastest_product, ->(number){order(created_at: :desc).limit(number)}
   scope :search_by_name, ->(name){where (" name like ?"), "%#{name}%"}
@@ -35,13 +34,5 @@ class Product < ApplicationRecord
                    GROUP BY `order_details`.`product_id`
                    ORDER BY sum(order_details.quantity) DESC"
     Product.where("id IN (#{product_ids})").limit(Settings.product.limit)
-  end
-
-  private
-
-  def images_empty
-    errors.add(:images, :blank,
-      message: I18n.t("admin.products.new.not_empty")) unless
-      images.count > 0
   end
 end
