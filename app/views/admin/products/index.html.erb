@@ -1,12 +1,37 @@
- <% provide :title, t(".page_title")%>
+<% provide :title, t(".page_title")%>
 
- <div class="panel panel-default panel-table">
+<div class="panel panel-default panel-table">
   <div class="panel-heading">
     <div class="row">
       <div class="col col-xs-6">
         <h3 class="panel-title"><%= t ".panel_title" %></h3>
       </div>
+      <div class="col col-xs-2">
+        <%= link_to t(".csv"), admin_products_path(format: "csv"),
+          class: "btn btn-success" %>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+      <%= form_tag admin_products_path, :method => :get,
+      class: "form-inline" do %>
+
+        <%= label_tag :name, t(".name"), class: "control-label col-sm-1" %>
+        <%= text_field_tag :name, params[:name], class: "form-control col-sm-2" %>
+
+        <%= select_tag :category_id,
+          options_from_collection_for_select(@supports.all_categories, :id, :name,
+          params[:category_id]), {prompt: t(".category"), class: "form-control"} %>
+        <%= select_tag :provider_id,
+          options_from_collection_for_select(@supports.all_providers, :id, :name,
+          params[:provider_id]), {prompt: t(".provider"), class: "form-control"} %>
+
+        <%= submit_tag t(".search"), class: "btn btn-success col-sm-2" %>
+      <% end %>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-6">
         <%= page_entries_info @products %>
@@ -20,8 +45,8 @@
     <table class="table table-striped table-bordered table-list">
       <thead>
         <tr>
-          <th><%= t "Index" %></th>
-          <th style="width: 20%;"><%= t ".name" %></th>
+          <th><%= t ".index" %></th>
+          <th><%= t ".name" %></th>
           <th><%= t ".price" %></th>
           <th><%= t ".quantity" %></th>
           <th><%= t ".status" %></th>
@@ -32,9 +57,9 @@
         </tr>
       </thead>
       <tbody>
-      <% @products.each_with_index do |product, index| %>
+        <% @products.each_with_index do |product, index| %>
         <%= render "product", product: product, index: index %>
-      <% end %>
+        <% end %>
       </tbody>
     </table>
 

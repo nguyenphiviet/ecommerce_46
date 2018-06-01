@@ -2,9 +2,16 @@ class Admin::ProductsController < Admin::BaseController
   before_action :load_product, except: %i(new index create)
 
   def index
-    @products = Product.select(:id, :name, :price, :quantity, :status,
+    search = Product.custom_search params
+    @products = search.select(:id, :name, :price, :quantity, :status,
       :rate_average, :category_id, :provider_id).newest
       .page(params[:page]).per(Settings.admin.list.per_page)
+    @supports = Supports::Product.new
+    respond_to do |format|
+      format.html
+      format.csv {send_data @products.to_csv,
+        filename: "products-#{Date.today}"}
+    end
   end
 
   def new

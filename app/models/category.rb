@@ -9,4 +9,8 @@ class Category < ApplicationRecord
   validates :priority, numericality:
     {greater_than_or_equal_to: Settings.category.priority.min_value,
       only_integer: true}
+
+  def self.get_list_name
+    enable.select :id, :name
+  end
 end

@@ -214,6 +214,8 @@ en:
         rating: "Rating"
         category: "Category"
         provider: "Provider"
+        csv: "Export to CSV"
+        search: "Search"
       product:
         sure: "You sure?"
       new:
