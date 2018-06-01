@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user
   before_action :correct_user, only: %(index create)
-  # after_action :update_quantity, only: :create
+  before_action :check_cart, only: :index
 
   def index
     @cart = session[:cart]
@@ -23,6 +22,11 @@ class OrdersController < ApplicationController
 
   private
 
+  def order_params
+    params.require(:order).permit(:name, :phone, :address, :note, :total,
+      order_details_attributes: [:id, :quantity, :price, :order_id, :product_id])
+  end
+
   def logged_in_user
     unless logged_in?
       store_location
@@ -31,13 +35,12 @@ class OrdersController < ApplicationController
     end
   end
 
-  def correct_user
-    error_redirect unless current_user
+  def check_cart
+    redirect_to root_path unless current_cart.present?
   end
 
-  def order_params
-    params.require(:order).permit(:name, :phone, :address, :note,
-      order_details_attributes: [:id, :quantity, :price, :order_id, :product_id])
+  def correct_user
+    error_redirect unless current_user
   end
 
   def redirect_to_homepage

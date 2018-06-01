@@ -1,6 +1,9 @@
-<%= form_for @order, html: {id: "form-order" } do |f| %>
+<%= form_for @order, html: {id: "form-order"} do |f| %>
 <div class="container">
   <div class="col-md-6" id="checkout">
+    <div class="col-md-4">
+      <%= render "shared/error_messages", object: @order %>
+    </div>
     <div class="box">
       <h1><%= t "check_out" %></h1>
       <div class="content">
@@ -37,7 +40,10 @@
           </div>
         </div>
       </div>
-
+      <%= f.fields_for :order_details do |order_detail| %>
+        <%= render "item_fields", f: order_detail %>
+      <% end %>
+      <%= f.hidden_field :total, value: total_cart %>
       <div class="box-footer">
         <div class="pull-left">
           <a href="<%= carts_path %>" class="btn btn-default"><i class="fa fa-chevron-left"></i><%= t ".back_to_cart" %></a>
@@ -49,35 +55,7 @@
       </div>
     </div>
   </div>
+  <%= render "cart_review" %>
 
-  <div class="col-md-6" id="checkout">
-  <div class="box">
-    <h1><%= t "check_out" %></h1>
-    <div class="content">
-      <div class="table-responsive">
-        <table class="table" style="text-align: center;">
-          <thead>
-            <tr>
-              <th><%= t ".name" %></th>
-              <th><%= t ".quantity" %></th>
-              <th><%= t ".unit_price" %></th>
-            </tr>
-          </thead>
-          <tbody style="text-align: center;">
-            <%= f.fields_for :order_details do |order_detail| %>
-              <%= render "item_fields", f: order_detail %>
-            <% end %>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th colspan="5">Total</th>
-              <th><%= total_cart %></th>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 <% end %>

@@ -4,6 +4,10 @@ module CartsHelper
     @current_cart = session[:cart] if session[:cart]
   end
 
+  def total_price_item item_price, quantity
+    item_price.to_i * quantity.to_i
+  end
+
   def total_cart
     total = 0
     session[:cart].each do |item|

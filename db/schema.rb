@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530044047) do
+ActiveRecord::Schema.define(version: 20180601031240) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "priority", default: 0
-    t.boolean "acceted", default: true
+    t.integer "priority", default: 1
+    t.boolean "enable", default: true
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
-    t.integer "status"
+    t.integer "status", default: 1
     t.bigint "user_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180530044047) do
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_images_on_user_id"
+    t.index ["product_id"], name: "index_images_on_product_id"
   end
 
   create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180530044047) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total", default: 0
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -85,6 +86,7 @@ ActiveRecord::Schema.define(version: 20180530044047) do
     t.bigint "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity_bought", default: 0
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"
   end
@@ -136,7 +138,7 @@ ActiveRecord::Schema.define(version: 20180530044047) do
   add_foreign_key "comments", "users"
   add_foreign_key "favourites", "products"
   add_foreign_key "favourites", "users"
-  add_foreign_key "images", "users", column: "product_id"
+  add_foreign_key "images", "products"
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"

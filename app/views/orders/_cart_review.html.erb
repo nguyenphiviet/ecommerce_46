@@ -13,13 +13,17 @@
           </thead>
           <tbody class="table-cart">
             <% current_cart.each do |item_cart| %>
-              <%= render "item_review", item: item_cart, show_total: true %>
+              <tr>
+                <td><%= item_cart["name"] %></td>
+                <td><%= item_cart["quantity"] %></td>
+                <td><%= total_price_item item_cart["price"], item_cart["quantity"] %> VND</td>
+              </tr>
             <% end %>
           </tbody>
           <tfoot>
             <tr>
-              <th colspan="5">Total</th>
-              <th><%= total_cart %></th>
+              <th colspan="5"><%= t ".total" %></th>
+              <th><%= total_cart %> VND</th>
             </tr>
           </tfoot>
         </table>
