@@ -1,14 +1,13 @@
-<%= form_for :item, url: item_path(id: item["product_id"]), method: :put, class: "form-control" do |f| %>
-  <tr>
-    <td><%= link_to item["name"], product_path(id: item["product_id"]) %></td>
-    <td>
-      <%= f.number_field :quantity, value: item["quantity"].to_i, class: "form-control", min: Settings.cart.default_quantity %>
-    </td>
-    <td><%= item["price"] %> VND</td>
-    <td><%= item["price"].to_i * item["quantity"].to_i %> VND</td>
-    <td><%= f.submit t("update"), class: "btn btn-primary" %></td>
-    <td>
-      <%= link_to t("delete"), item_path(id: item["product_id"], product_id: item["product_id"]), data: {confirm: t("confirm_delete") + "'#{item["name"]}'"}, method: :delete, remote: true, class: "btn btn-danger" %>
-    </td>
-  </tr>
-<% end %>
+<tr>
+  <td><%= link_to item["name"], product_path(id: item["product_id"]) %></td>
+  <td>
+    <input type="hidden" value="<%= item["product_id"] %>", class = "product_id_update" %>
+    <input class="quantity" type="number" value="<%= item["quantity"]%>" min="1" />
+  </td>
+  <td><%= item["price"] %> VND</td>
+  <td class="item-<%= item["product_id"] %>"><%= total_price_item item["price"],  item["quantity"] %> VND</td>
+  <td>
+    <%= link_to t("delete"), item_path(id: item["product_id"], product_id: item["product_id"]), data: {confirm: t("confirm_delete") + "'#{item["name"]}'"}, method: :delete, remote: true, class: "btn btn-danger cart-item" %>
+  </td>
+</tr>
+

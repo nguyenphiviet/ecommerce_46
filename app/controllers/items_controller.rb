@@ -25,9 +25,13 @@ class ItemsController < ApplicationController
 
   def update
     index = session[:cart].find_index{|e| e["product_id"] == params[:id]}
-    quantity_update = params["item"]["quantity"].to_i
+    quantity_update = params["quantity"].to_i
     session[:cart][index]["quantity"] = quantity_update
-    redirect_to request.referrer
+    @total_price_item = quantity_update.to_i * session[:cart][index]["price"].to_i
+    respond_to do |format|
+      format.js
+      format.html{redirect_to request.referrer}
+    end
   end
 
   def destroy
